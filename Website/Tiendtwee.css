@@ -1,0 +1,279 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* agar background dari div nya nempel ful keatas dan kiri CMIIW*/
+}
+
+body{
+    background-color: azure;
+}
+
+
+.NAVBAR{
+    background-color: rgba(255, 255, 255, 0,95);
+    display: grid;
+    grid-template-columns: repeat(4, auto) ;     /*menentukan jumlah dan ukuran colom serta baris */
+    grid-template-rows: repeat(1, auto);
+    height: 75px;
+    justify-content: space-around;
+    align-content: flex-end;
+    position: sticky;      /* harus ada top untuk aktif */
+    top: 0;                     /* WAJIB supaya nempel saat scroll */
+    z-index: 1000;              /* supaya tidak ketimpa elemen lain */
+    backdrop-filter: blur(8px); /* biar ngeblur */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* shadow hitam halus */
+}
+
+.Menu{
+    padding-bottom: 20px;
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:rgba(0, 0, 0, 0.5);
+    font-size: larger;
+}
+
+.Menu:hover{
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+    text-decoration-color:red;
+    text-underline-offset: 22px;
+    cursor: pointer;
+}
+
+.Teks-Kelas{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.FotoUtama{
+    width: 100%;
+    display: block;
+    filter:drop-shadow(5px 5px 10px rgba(0,0,0,0.5)); /* jangan dipisah kalau dipisah nanti tertimpa */
+
+    -webkit-mask-image: linear-gradient( /* fitur wipe */
+        to bottom,                     /* wipe ke bawah */
+        black 80%,                   /* start dari 70% */
+        transparent 100%               /* ke 100% */
+    );
+
+        mask-image: linear-gradient(
+        to bottom,
+        black 80%,
+        transparent 100%
+    );
+}
+
+.Foto-Teks{
+    position: absolute;        /*BERTUMPUK,Overlay = position: absolute ✅ Parent = position: relative  ✅ Tengah sempurna = 50% + translate */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);       
+    width: 60%;
+
+     transition:
+        transform 1s ease-out,
+        width 0.1s ease-out;
+}
+
+.Foto-Teks:hover{
+   transform: translate(-50%, -50%) scale(1.3);
+   
+}
+
+.containerpembuka{
+    background-color: rgb(35,80,210);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 900px;
+    margin-top: 120px;
+}
+
+.containerteks{
+    width: 70%;
+    padding: 20px;
+}
+
+@font-face {
+    font-family: The Visitor;
+    src: url(The\ Visitor.otf);
+}
+
+.Pendahuluan{
+    font-family: The Visitor;
+    color: azure;
+    letter-spacing: 2px;
+    margin-left: 20px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.541);
+    
+}
+
+.Teks-Pembuka{
+    margin-left: 30px;
+    color: azure;
+    letter-spacing: 2px;
+    font-family: The Visitor;
+    font-size: smaller;
+    white-space: pre-line;
+    line-height: 1.6;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.541);
+}
+
+.containerustad{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Foto-ustad{
+    width: 220px;
+    height: auto;
+    margin-top: 26px ;
+    border-radius: 5%;
+}
+
+.NamaUstad{
+   margin-top: 12px;
+   color: azure;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   text-align: center;
+   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.541);
+}
+
+.Logo{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1;
+    justify-items:center;
+    margin: 142px 0 0 0;
+    gap: 80px;
+    width: 1300px;
+}
+
+.KartuLogo{
+  
+    width: 300px;               /* ⬅️ SAMA SEMUA */
+    height: 300px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+.KartuLogo img{
+    width: 300px;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.TeksLogo{
+    font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    letter-spacing: 3px;
+    color: azure;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.541);
+}
+.containeralbum{
+    padding: 40px 24px; /*40 atas bawah 24 kiri kanan*/
+    margin-top: 200px ;
+}
+
+@font-face{
+    font-family: Halo Dek;
+    src: url(Halo\ Dek.otf);
+}
+
+.TeksAlbum{
+    text-align: center;
+    color: rgb(26, 24, 24);
+    letter-spacing: 4px;
+    margin: 0 0 100px 0;   /* reset margin bawaan 100 itu margin/jarak ke bawah */
+    font-family: Halo Dek;
+}
+
+.Album-Grid{
+    display: flex; /*Anak di dalamnya (gambar) otomatis sebaris */
+    justify-content: center;
+    gap: 60px;  /* gap: 40px; */
+}
+
+.Album{
+  width: 45%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 5%;
+}
+
+.ContainerStruktur{
+    margin-top: 124px;
+    padding: 40px 24px;
+}
+
+.TeksStruktur{
+    text-align: center;
+    font-family: Halo Dek;
+    letter-spacing: 3px;
+    margin: 0 0 100px 0;
+}
+
+.Struktur-Grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center; /* items ngatur isi grid, content atur gridnya */
+    gap: 40px;
+    margin: 0 0 0 0;
+   
+}
+
+.FotoX{
+    width: 60%;
+    margin: 0 0 72px 0;
+    border-radius: 5%;
+    border: 2px solid blue;
+}
+
+.KartuNama{
+   text-align: center;
+}
+
+.TeksX{
+    letter-spacing: 2px;
+    font-family: Halo Dek;
+}
+
+.ContainerAnggota{
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-row: repeat(14, 1fr);
+    gap: 30px;
+    
+}
+.TeksAnggota{
+    text-align: center;
+    font-family: Halo Dek;
+    letter-spacing: 3px;
+    margin: 500px 0 100px 0;
+}
+
+.KartuAnggota{
+    text-align: center;
+    margin: 0 0 72px 0;
+}
+
+.FotoAnggota{
+    width: 70%;
+    border-radius: 6%;
+}
+
+.NamaAnggota{
+    margin: 24px 0 0 0;
+    font-family: Halo Dek;
+    letter-spacing: 2px;
+}
